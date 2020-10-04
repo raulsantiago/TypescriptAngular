@@ -11,6 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { DiversaoComponent } from './diversao/diversao.component';
+import { OfertaComponent } from './oferta/oferta.component';
+import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
+import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { DiversaoComponent } from './diversao/diversao.component';
     HomeComponent,
     RodapeComponent,
     RestaurantesComponent,
-    DiversaoComponent
+    DiversaoComponent,
+    OfertaComponent,
+    ComoUsarComponent,
+    OndeFicaComponent
   ],
   imports: [
     BrowserModule,

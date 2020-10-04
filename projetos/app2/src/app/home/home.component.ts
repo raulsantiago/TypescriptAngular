@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { OfertasService } from '../ofertas.services';
+import { Oferta } from '../shared/oferta.model';
 
-import { OfertasService } from '../ofertas.services'
-import { Oferta } from '../shared/oferta.model'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,10 +22,7 @@ export class HomeComponent implements OnInit {
         this.ofertas = ofertas
       })
       .catch((param: any) => { 
-        console.log(param) 
+        console.log(param)
       })
-
-
   }
-
 }
