@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import { Observer } from 'rxjs/Observer';
 import { Subscription } from 'rxjs/Subscription';
+import {CarrinhoService} from '../carrinho.service'
 
 
 @Component({
@@ -21,7 +22,8 @@ export class OfertaComponent implements OnInit, OnDestroy {
 
   public oferta: Oferta
 
-  constructor(private route: ActivatedRoute, private ofertasService: OfertasService) { }
+  constructor(private route: ActivatedRoute, private ofertasService: OfertasService,    
+              private carrinhoService: CarrinhoService) { }
 
   ngOnInit() {
     this.route.params.subscribe((parametros: Params) => {
@@ -31,7 +33,7 @@ export class OfertaComponent implements OnInit, OnDestroy {
       })
     })
 
-
+    //console.log('Array: ', this.carrinhoService.exibirItens())
     
 
     // snapshot não atualiza com modificações
@@ -72,6 +74,11 @@ export class OfertaComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     // this.meuObservableTesteSubscription.unsubscribe()
     // this.tempoObervableSubscription.unsubscribe()
+  }
+
+  public adicionarItemCarrinho(oferta: Oferta): void {
+    this.carrinhoService.incluirItem(this.oferta)
+    console.log(this.carrinhoService.exibirItens())
   }
 
 }

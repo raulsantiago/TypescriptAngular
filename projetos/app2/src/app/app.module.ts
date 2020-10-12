@@ -1,9 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http'
-import { RouterModule } from '@angular/router'
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
+//import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {CarrinhoService} from './carrinho.service'
 
-import { ROUTES } from './app.routes'
+import { ROUTES } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { TopoComponent } from './topo/topo.component';
@@ -37,9 +40,11 @@ import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra
   imports: [
     BrowserModule,
     HttpModule,
+    //FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [CarrinhoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
